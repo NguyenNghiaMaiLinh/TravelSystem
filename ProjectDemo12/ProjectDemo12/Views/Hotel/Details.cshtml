@@ -1,0 +1,113 @@
+﻿@model ProjectDemo12.Models.Hotel
+
+<div>
+    <h4>Hotel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ID)
+        </dd>
+        <hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PhoneNumber)
+        </dd>
+        <hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+        <hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.RoomNumber)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.RoomNumber)
+        </dd>
+        <hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.isHot)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.isHot)
+        </dd>
+        <hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+        <hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.Rating)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Rating)
+        </dd>
+        <hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.isParking)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.isParking)
+        </dd>
+        <hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.isCredit)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.isCredit)
+        </dd>
+        <hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.tbl_City)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.tbl_City.CityName)
+        </dd>
+        <hr />
+        <dt>
+            Convenients
+        </dt>
+        <dd>
+            <div class="form-group">
+                <label class="control-label"></label>
+                <select class="form-control" asp-items="ViewBag.listGetConvenient"></select>
+            </div>
+        </dd>
+        <hr />
+    </dl>
+</div>
+<div>
+    <a class="btn btn-default" asp-action="Edit" asp-route-id="@Model.ID">Edit</a> |
+    <a class="btn btn-default" asp-action="Index">Back to List</a>
+</div>

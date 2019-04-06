@@ -1,0 +1,41 @@
+﻿@model IEnumerable<ProjectDemo12.Models.Metadata>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WebName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Copyright)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Count)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WebName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Copyright)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Count)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

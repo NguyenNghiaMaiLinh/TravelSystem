@@ -1,0 +1,65 @@
+﻿@model ReflectionIT.Mvc.Paging.PagingList<ProjectDemo12.Models.TravelType>
+@addTagHelper *,ReflectionIT.Mvc.Paging
+@using ReflectionIT.Mvc.Paging
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Travel Types Page</h2>
+
+<div class="row form-group">
+    <a class="btn btn-info" asp-action="Create">Create new</a>
+</div>
+
+<form asp-action="Index" method="post">
+    <div class="row input-group ">
+        <input type="text" name="txtSearch" id="search" value="@ViewBag.SearchValue" class="form-control" placeholder="Search" />
+        <div class="input-group-btn">
+            <input type="submit" value="Search" class="btn btn-primary" />
+        </div>
+    </div>
+</form>
+@if (Model == null || Model.Count == 0)
+{<h3 class="label-warning">No Record found!</h3> }
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+
+                    <td>
+                        <div class="row form-group">
+                            <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.ID">Edit</a>
+                            <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+    <nav aria-label="Suppilers navigation example">
+        <vc:pager paging-list="@Model" />
+    </nav>
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }

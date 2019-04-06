@@ -1,0 +1,56 @@
+﻿@model ProjectDemo12.Models.TourDetail
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete Page</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DateContent)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DateContent)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.tbl_City)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.tbl_City.CityLocation)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.tbl_Tour)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.tbl_Tour.ID)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="ID" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a class="btn btn-default"  asp-action="Index">Back to List</a>
+    </form>
+</div>

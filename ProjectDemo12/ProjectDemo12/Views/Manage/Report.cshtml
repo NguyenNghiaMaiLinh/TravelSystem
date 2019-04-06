@@ -1,0 +1,101 @@
+﻿<html>
+<head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+
+//chart_div
+  google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Sales', 'Expenses'],
+          ['2017',  1000,      400],
+          ['2018',  1170,      460],
+          ['2019',  660,       1120],
+        ]);
+
+        var options = {
+          title: 'Luona Tavel System Performance',
+          hAxis: {title: 'Year',  titleTextStyle: {color: '#333'}},
+          vAxis: {minValue: 0}
+        };
+
+        var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+
+//piechart_3d
+        google.charts.load('current', { 'packages': ['corechart'] });
+        google.charts.setOnLoadCallback(drawChart1);
+        function drawChart1() {
+            var data = google.visualization.arrayToDataTable([
+                ['Age', 'User age in the system'],
+                ['0 -> 18', @ViewBag.ageFrom0To18],
+                ['18 -> 40', @ViewBag.ageFrom18To40],
+                ['40 -> 60', @ViewBag.ageFrom40To60],
+                ['60 ->100', @ViewBag.ageFrom60To100],
+            ]);
+
+            var options = {
+                title: 'User age in the system',
+                is3D: true,
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+            chart.draw(data, options);
+        }
+
+//regions_div
+            google.charts.load('current', {
+                'packages': ['geochart'],
+            // Note: you will need to get a mapsApiKey for your project.
+            // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
+            'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
+          });
+          google.charts.setOnLoadCallback(drawRegionsMap);
+
+      function drawRegionsMap() {
+        var data = google.visualization.arrayToDataTable([
+              ['Country', 'Number Tour'],
+            ['South Korea', @ViewBag.getTourByKorea],
+            ['Philippines', @ViewBag.getTourByPhilippines],
+            ['Japan', @ViewBag.getTourByJapan],
+            ['Malaysia', @ViewBag.getTourByMalaysia],
+            ['Brazil', @ViewBag.getTourByBrazil],
+            ['Canada', @ViewBag.getTourByCanada],
+            ['China', @ViewBag.getTourByChina],
+             ['Vietnam', @ViewBag.getTourByVietNam],
+            ['Russia', @ViewBag.getTourByRussia],
+            ['Ireland',@ViewBag.getTourByIreland],
+            ['United States', @ViewBag.getTourByUnitedStates],
+            ['France', @ViewBag.getTourByFrance],
+            ]);
+    
+          var options = { title: 'User age in the system', is3D: true,};
+            var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+         
+            chart.draw(data, options);
+          }
+    
+    
+    </script>
+</head>
+<body style="background-color:#a9d8d7">
+    <table>
+        <tr>
+            <td>
+                <p style="margin-top:50px; font-style:unset;">Tour number of each country</p>
+                <div id="regions_div" style="width: 600px; height: 450px; margin-right:50px"></div>
+            </td>
+            <td>
+                <div id="piechart_3d" style="width: 600px; height: 450px;margin-top:80px; margin-right:50px"></div>
+            </td>
+
+        </tr>
+    </table>
+    @*<hr />
+    <div id="chart_div" style="width: 600px; height: 300px;"></div>*@
+
+</body>
+</html>

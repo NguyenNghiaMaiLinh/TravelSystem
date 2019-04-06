@@ -1,0 +1,50 @@
+﻿@model ProjectDemo12.Models.Countries
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit Page</h2>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="CountryID" />
+            <div class="form-group">
+                <label asp-for="CountryName" class="control-label"></label>
+                <input asp-for="CountryName" class="form-control" />
+                <span asp-validation-for="CountryName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Population" class="control-label"></label>
+                <input asp-for="Population" class="form-control" />
+                <span asp-validation-for="Population" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Language" class="control-label"></label>
+                <input asp-for="Language" class="form-control" />
+                <span asp-validation-for="Language" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MainReligion" class="control-label"></label>
+                <input asp-for="MainReligion" class="form-control" />
+                <span asp-validation-for="MainReligion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OtherDetails" class="control-label"></label>
+                <input asp-for="OtherDetails" class="form-control" />
+                <span asp-validation-for="OtherDetails" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a class="btn btn-default" asp-action="Index">Back to List</a>
+</div>
+

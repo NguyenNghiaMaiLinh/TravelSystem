@@ -1,0 +1,44 @@
+﻿@model IEnumerable<ProjectDemo12.Models.Convenients>
+
+<h2>Add Convenient Page</h2>
+<div class="row form-group">
+    <a class="btn btn-info" asp-action="CreateConvenient" style="margin-top:10px;">Create Convenient New</a>
+</div>
+<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Convenient)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <form asp-action="AddConvenient">
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Convenient)
+                </td>
+                <td>
+                    <div class="row form-group">
+                        <input type="hidden" name="ConvenientID" value="@item.ID" />
+                        <input type="hidden" name="HotelID" value="@ViewBag.hotelID" />
+                        <button class="btn btn-success" type="submit">Add Convenient</button>
+                    </div>
+                </td>
+            </tr>
+        </form>
+}
+    </tbody>
+</table>
+<div>
+    <a class="btn btn-default" asp-action="Index">Back to List</a>
+</div>

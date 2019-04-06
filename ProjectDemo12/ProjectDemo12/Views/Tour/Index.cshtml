@@ -1,0 +1,111 @@
+﻿@model ReflectionIT.Mvc.Paging.PagingList<ProjectDemo12.Models.Tour>
+@using ReflectionIT.Mvc.Paging
+@addTagHelper *,ReflectionIT.Mvc.Paging
+
+<h2>Tour Page</h2>
+
+
+<div class="row form-group">
+    <a class="btn btn-info" asp-action="CreatebyCar"><i class="fas fa-bus"></i> Create new</a> | <a class="btn btn-info" asp-action="CreatebyFlight"><i class="fas fa-plane-departure"></i> Create new</a> |  <a class="btn btn-info" asp-action="CreateTourDeatails"><i class="fas fa-file-alt"></i> Create Tour Details</a>
+</div>
+
+<form asp-action="Index" method="post">
+    <div class="row input-group ">
+        <input type="text" name="txtSearch" value="@ViewBag.SearchValue" id="search" class="form-control" placeholder="Search" />
+        <div class="input-group-btn">
+            <input type="submit" value="Search" class="btn btn-primary" />
+        </div>
+    </div>
+</form>
+@if (Model == null || Model.Count == 0)
+{<h3 class="label-warning">No Record found!</h3> }
+else
+{
+    <table class="table">
+
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TimeBegin)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TimeEnd)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PriceForKid)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PriceForBaby)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PriceForAdult)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SeatsRemaining)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TotalSeats)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TimeBegin)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TimeEnd)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PriceForKid)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PriceForBaby)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PriceForAdult)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SeatsRemaining)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TotalSeats)
+                    </td>
+                    <td>
+                        <div class="row form-group">
+                            @if (item.Vehicle != null)
+                            {
+                                <a class="btn btn-warning" asp-action="EditByCar" asp-route-id="@item.ID">Edit</a>
+                            }
+                            else
+                            {
+                                <a class="btn btn-warning" asp-action="EditByFlight" asp-route-id="@item.ID">Edit</a>
+                            }
+
+                            <a class="btn btn-success" asp-action="Details" asp-route-id="@item.ID">Details</a>
+                            <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+                            <a class="btn btn-info" asp-action="TourDetails" asp-route-id="@item.ID">Tour Details</a>
+                            <a class="btn btn-default" asp-action="AddHotel" asp-route-id="@item.ID">Add Hotel</a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+<nav aria-label="Suppilers navigation example">
+    <vc:pager paging-list="@Model" />
+</nav>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

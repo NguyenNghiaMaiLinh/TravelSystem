@@ -1,0 +1,48 @@
+﻿@model ProjectDemo12.Models.TourGuide
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TourGuide</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TourGuideID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TourGuideID)
+        </dd><hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd><hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd><hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.Phone)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Phone)
+        </dd><hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd><hr />
+    </dl>
+</div>
+<div>
+    <a class="btn btn-warning"  asp-action="Edit" asp-route-id="@Model.TourGuideID">Edit</a> |
+    <a class="btn btn-default"  asp-action="Index">Back to List</a>
+</div>

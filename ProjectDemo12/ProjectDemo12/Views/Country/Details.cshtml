@@ -1,0 +1,49 @@
+﻿@model ProjectDemo12.Models.Countries
+
+<div>
+    <h4>Countries</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CountryID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CountryID)
+        </dd><hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.CountryName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CountryName)
+        </dd><hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.Population)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Population)
+        </dd><hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.Language)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Language)
+        </dd><hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.MainReligion)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MainReligion)
+        </dd><hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.OtherDetails)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.OtherDetails)
+        </dd><hr />
+
+    </dl>
+</div>
+<div>
+    <a class="btn btn-default" asp-action="Edit" asp-route-id="@Model.CountryID">Edit</a> |
+    <a class="btn btn-default" asp-action="Index">Back to List</a>
+</div>

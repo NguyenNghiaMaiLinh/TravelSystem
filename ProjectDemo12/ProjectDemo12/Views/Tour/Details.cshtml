@@ -1,0 +1,245 @@
+﻿@model ProjectDemo12.Models.Tour
+
+<div>
+    <h4>Tour Details Page</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ID)
+        </dd>
+        <hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.TimeBegin)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TimeBegin)
+        </dd>
+        <hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.TimeEnd)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TimeEnd)
+        </dd>
+        <hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.PriceForKid)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PriceForKid)
+        </dd>
+        <hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.PriceForBaby)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PriceForBaby)
+        </dd>
+        <hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.PriceForAdult)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PriceForAdult)
+        </dd>
+        <hr />
+        @if (Model.FlightID == null)
+        {
+            <dt>
+                @Html.DisplayNameFor(model => model.Vehicle)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Vehicle)
+            </dd>
+            <hr />
+        }
+        <dt>
+            @Html.DisplayNameFor(model => model.SeatsRemaining)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SeatsRemaining)
+        </dd>
+        <hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalSeats)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TotalSeats)
+        </dd>
+        <hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.IsSale)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IsSale)
+        </dd>
+        <hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.fromPlace)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.fromPlaceModel.CityName)
+        </dd>
+        <hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.isHot)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.isHot)
+        </dd>
+        <hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.rating)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.rating)
+        </dd>
+        <hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.GroupUpPlace)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.GroupUpPlace)
+        </dd>
+        <hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.GroupUpTime)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.GroupUpTime)
+        </dd>
+        <hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.MeetingPlace)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MeetingPlace)
+        </dd>
+        <hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.MeetingTime)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MeetingTime)
+        </dd>
+        <hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.Note)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Note)
+        </dd>
+        <hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <hr />
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbl_TourGuide)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.tbl_TourGuide.FirstName)
+        </dd>
+        <hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.tbl_TravelType)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.tbl_TravelType.Name)
+        </dd><hr/>
+        <dt>
+            Hotels
+        </dt>
+        <dd>
+            <div class="form-group">
+                <label class="control-label"></label>
+                <select class="form-control" asp-items="ViewBag.listGetHotels"></select>
+            </div>
+        </dd>
+        <hr />
+        @if (Model.Vehicle == null)
+        {
+            <dt>
+                @Html.DisplayNameFor(model => model.tbl_Flight)
+            </dt>
+            <dd>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>
+                                DateGo
+                            </th>
+                            <th>
+                                DateBack
+                            </th>
+                            <th>
+                                CodeGo
+                            </th>
+                            <th>
+                                CodeBack
+                            </th>
+                            <th>
+                                DateGoArrival
+                            </th>
+                            <th>
+                                DateBackArrival
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(model => model.tbl_Flight.DateGo)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(model => model.tbl_Flight.DateBack)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(model => model.tbl_Flight.CodeGo)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(model => model.tbl_Flight.CodeBack)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(model => model.tbl_Flight.DateGoArrival)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(model => model.tbl_Flight.DateBackArrival)
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </dd>
+            <hr />
+
+        }
+
+    </dl>
+</div>
+<div>
+    @if (Model.Vehicle != null)
+    {
+        <a class="btn btn-warning" asp-action="EditByCar" asp-route-id="@Model.ID">Edit</a>
+    }
+    else
+    {
+        <a class="btn btn-warning" asp-action="EditByFlight" asp-route-id="@Model.ID">Edit</a>
+    }
+
+    <a class="btn btn-default" asp-action="Index">Back to List</a>
+</div>

@@ -1,0 +1,147 @@
+﻿@model ProjectDemo12.Models.Tour
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Delete Page</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TimeBegin)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TimeBegin)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TimeEnd)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TimeEnd)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PriceForKid)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PriceForKid)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PriceForBaby)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PriceForBaby)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PriceForAdult)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PriceForAdult)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Vehicle)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Vehicle)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SeatsRemaining)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SeatsRemaining)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalSeats)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TotalSeats)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IsSale)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IsSale)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.isHot)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.isHot)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.rating)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.rating)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.GroupUpPlace)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.GroupUpPlace)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.GroupUpTime)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.GroupUpTime)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MeetingPlace)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MeetingPlace)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MeetingTime)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MeetingTime)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Note)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Note)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.tbl_Flight)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.tbl_Flight.CodeGo) -  @Html.DisplayFor(model => model.tbl_Flight.CodeBack)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.tbl_TourGuide)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.tbl_TourGuide.FirstName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.fromPlaceModel)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.fromPlaceModel.CityName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.tbl_TravelType)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.tbl_TravelType.Name)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="ID" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a class="btn btn-default" asp-action="Index">Back to List</a>
+    </form>
+</div>

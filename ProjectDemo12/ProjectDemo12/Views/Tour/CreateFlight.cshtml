@@ -1,0 +1,56 @@
+﻿@model ProjectDemo12.Models.Flight
+<h4>Flight</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CreateFlight">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ID" class="control-label"></label>
+                <input asp-for="ID" class="form-control" />
+                <span asp-validation-for="ID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateGo" class="control-label"></label>
+                <input asp-for="DateGo" class="form-control" />
+                <span asp-validation-for="DateGo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateBack" class="control-label"></label>
+                <input asp-for="DateBack" class="form-control" />
+                <span asp-validation-for="DateBack" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CodeGo" class="control-label"></label>
+                <input asp-for="CodeGo" class="form-control" />
+                <span asp-validation-for="CodeGo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CodeBack" class="control-label"></label>
+                <input asp-for="CodeBack" class="form-control" />
+                <span asp-validation-for="CodeBack" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateGoArrival" class="control-label"></label>
+                <input asp-for="DateGoArrival" class="form-control" />
+                <span asp-validation-for="DateGoArrival" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateBackArrival" class="control-label"></label>
+                <input asp-for="DateBackArrival" class="form-control" />
+                <span asp-validation-for="DateBackArrival" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a class="btn btn-default" asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

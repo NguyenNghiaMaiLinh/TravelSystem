@@ -1,0 +1,130 @@
+﻿@model ProjectDemo12.Models.Tour
+
+<h4>Tour</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="EditByFlight">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ID" />
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TimeBegin" class="control-label"></label>
+                <input asp-for="TimeBegin" class="form-control" />
+                <span asp-validation-for="TimeBegin" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TimeEnd" class="control-label"></label>
+                <input asp-for="TimeEnd" class="form-control" />
+                <span asp-validation-for="TimeEnd" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PriceForKid" class="control-label"></label>
+                <input asp-for="PriceForKid" class="form-control" />
+                <span asp-validation-for="PriceForKid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PriceForBaby" class="control-label"></label>
+                <input asp-for="PriceForBaby" class="form-control" />
+                <span asp-validation-for="PriceForBaby" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PriceForAdult" class="control-label"></label>
+                <input asp-for="PriceForAdult" class="form-control" />
+                <span asp-validation-for="PriceForAdult" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TourGuideID" class="control-label"></label>
+                <select asp-for="TourGuideID" class="form-control" asp-items="ViewBag.listAllTourGuides"></select>
+                <span asp-validation-for="TourGuideID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SeatsRemaining" class="control-label"></label>
+                <input asp-for="SeatsRemaining" class="form-control" />
+                <span asp-validation-for="SeatsRemaining" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TotalSeats" class="control-label"></label>
+                <input asp-for="TotalSeats" class="form-control" />
+                <span asp-validation-for="TotalSeats" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IsSale" class="control-label"></label>
+                <input asp-for="IsSale" class="form-control" />
+                <span asp-validation-for="IsSale" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="fromPlace" class="control-label"></label>
+                <select asp-for="fromPlace" class="form-control" asp-items="ViewBag.listAllCities"></select>
+                <span asp-validation-for="fromPlace" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="isHot" /> @Html.DisplayNameFor(model => model.isHot)
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="rating" class="control-label"></label>
+                <input asp-for="rating" class="form-control" />
+                <span asp-validation-for="rating" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TravelTypeID" class="control-label"></label>
+                <select asp-for="TravelTypeID" class="form-control" asp-items="ViewBag.listAllTravelTypes"></select>
+                <span asp-validation-for="TravelTypeID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FlightID" class="control-label"></label>
+                <select asp-for="FlightID" class="form-control" asp-items="ViewBag.listAllFlights"></select>
+                <span asp-validation-for="FlightID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GroupUpPlace" class="control-label"></label>
+                <input asp-for="GroupUpPlace" class="form-control" />
+                <span asp-validation-for="GroupUpPlace" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GroupUpTime" class="control-label"></label>
+                <input asp-for="GroupUpTime" class="form-control" />
+                <span asp-validation-for="GroupUpTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MeetingPlace" class="control-label"></label>
+                <input asp-for="MeetingPlace" class="form-control" />
+                <span asp-validation-for="MeetingPlace" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MeetingTime" class="control-label"></label>
+                <input asp-for="MeetingTime" class="form-control" />
+                <span asp-validation-for="MeetingTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Note" class="control-label"></label>
+                <input asp-for="Note" class="form-control" />
+                <span asp-validation-for="Note" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a class="btn btn-default"  asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,78 @@
+﻿@model ReflectionIT.Mvc.Paging.PagingList<ProjectDemo12.Models.Booking>
+@addTagHelper *,ReflectionIT.Mvc.Paging
+@using ReflectionIT.Mvc.Paging
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Booking Page</h2>
+<form asp-action="Index" method="post">
+    <div class="row input-group ">
+        <input type="text" name="txtSearch" value="@ViewBag.SearchValue" id="search" class="form-control" placeholder="Search" />
+        <div class="input-group-btn">
+            <input type="submit" value="Search" class="btn btn-primary" />
+        </div>
+    </div>
+</form>
+@if (Model == null || Model.Count == 0)
+{<h3 class="label-warning">No Record found!</h3> }
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TotalMoney)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DateCreate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Phone)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Address)
+                </th>
+
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TotalMoney)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DateCreate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Phone)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Address)
+                    </td>
+
+                    <td>
+                        <div class="row form-group">
+                            <a class="btn btn-success" asp-action="Details" asp-route-id="@item.BookingID">Details</a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+    <nav aria-label="Suppilers navigation example">
+        <vc:pager paging-list="@Model" />
+    </nav>
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }
